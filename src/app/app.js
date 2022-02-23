@@ -8,7 +8,9 @@ const App = () => {
   const cart = useSelector((state) => state.cartStore.cart);
 
   const handleClick = () => {
-    dispatch(addToCart({ name: 'thing1' }));
+    dispatch(
+      addToCart({ name: 'thing1', num: Math.floor(Math.random() * 100000) }),
+    );
     console.log(cart);
   };
 
@@ -21,3 +23,11 @@ const App = () => {
 };
 
 export default App;
+
+// sample image
+
+/* <img
+  src={process.env.PUBLIC_URL + '/assets/images/wonderdoge.png'}
+  src={process.env.PUBLIC_URL + '/assets/images/' + 'wonderdoge.png'}
+  alt="test"
+></img> */
