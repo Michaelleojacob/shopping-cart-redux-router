@@ -1,0 +1,11 @@
+#nav-container {
+  display: flex;
+  font-size: 2rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#nav-links {
+  display: flex;
+  gap: 0.5rem;
+}
