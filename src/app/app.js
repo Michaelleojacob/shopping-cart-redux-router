@@ -1,17 +1,16 @@
 import cartSlice from './slices/cartSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const App = () => {
   const { addToCart } = cartSlice.actions;
   const dispatch = useDispatch();
 
-  const cart = useSelector((state) => state.cartStore.cart);
+  // const cart = useSelector((state) => state.cartStore.cart);
 
   const handleClick = () => {
     dispatch(
       addToCart({ name: 'thing1', num: Math.floor(Math.random() * 100000) }),
     );
-    console.log(cart);
   };
 
   return (

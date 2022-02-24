@@ -14,11 +14,9 @@
   display: flex;
   flex-direction: column;
   min-width: 100px;
-  min-height: 150px;
+  min-height: 155px;
   max-width: 100px;
-  max-height: 150px;
-  max-width: 100px;
-  max-height: 150px;
+  max-height: 155px;
   align-items: center;
 }
 
@@ -30,4 +28,14 @@
 .product-name {
   white-space: nowrap;
   overflow: hidden;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-quantity {
+  max-width: 50px;
 }

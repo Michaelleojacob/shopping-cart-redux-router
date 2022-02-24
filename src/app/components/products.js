@@ -1,10 +1,19 @@
 import getProductList from '../data/productList';
+import cartSlice from '../slices/cartSlice';
+import { useDispatch } from 'react-redux';
 
 const EachProduct = (obj) => {
   const { product } = obj;
+  const { addToCart } = cartSlice.actions;
+  const dispatch = useDispatch();
 
-  const handleClick = () => {
-    console.log('this item should be added to cart');
+  const handleSubmit = (e, item) => {
+    e.preventDefault();
+    const getInputValue = e.target.querySelector('.product-quantity').value;
+    const quantity = parseInt(getInputValue, 10);
+    const newItem = { ...item };
+    newItem.amount = isNaN(quantity) ? 1 : quantity;
+    dispatch(addToCart(newItem));
   };
 
   return (
@@ -16,7 +25,10 @@ const EachProduct = (obj) => {
         src={process.env.PUBLIC_URL + '/assets/images/' + product.image}
         alt={product.name}
       ></img>
-      <button onClick={handleClick}>add to cart</button>
+      <form className="product-form" onSubmit={(e) => handleSubmit(e, product)}>
+        <input type="number" className="product-quantity"></input>
+        <button>add to cart</button>
+      </form>
     </div>
   );
 };
