@@ -22,7 +22,7 @@ const getProductList = () => {
       category: 'dog',
     },
     {
-      name: 'dog dude',
+      name: 'dude dog',
       id: '4',
       image: 'dudedoge.png',
       price: '$6',
@@ -122,7 +122,7 @@ const getProductList = () => {
     {
       name: 'napoleon dog',
       id: '18',
-      image: 'napoleondoge.jpg',
+      image: 'napoleandoge.jpg',
       price: '$4',
       category: 'dog',
     },

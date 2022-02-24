@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 const Nav = () => {
   const cart = useSelector((state) => state.cartStore.cart);
-  console.log(cart);
   return (
     <div id="nav-container">
       <div id="nav-title">

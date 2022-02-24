@@ -1,0 +1,33 @@
+#product-container {
+  display: flex;
+}
+
+#product-container-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  justify-content: space-between;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  min-height: 150px;
+  max-width: 100px;
+  max-height: 150px;
+  max-width: 100px;
+  max-height: 150px;
+  align-items: center;
+}
+
+.product-image {
+  max-width: 75px;
+  max-height: 75px;
+}
+
+.product-name {
+  white-space: nowrap;
+  overflow: hidden;
+}
