@@ -19,7 +19,7 @@ const EachProduct = (obj) => {
   return (
     <div className="product-item">
       <div className="product-name">{product.name}</div>
-      <div>{product.price}</div>
+      <div>${product.price.toLocaleString()}</div>
       <img
         className="product-image"
         src={process.env.PUBLIC_URL + '/assets/images/' + product.image}

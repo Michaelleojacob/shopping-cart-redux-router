@@ -22,8 +22,9 @@ const cartSlice = createSlice({
     },
     removeFromCart: (state, action) => {
       const newArr = [...state.cart];
-      const findIndex = newArr.find((product) => product.id === action.payload);
-      console.log(findIndex);
+      const id = action.payload;
+      const filteredArr = newArr.filter((item) => item.id !== id);
+      state.cart = filteredArr;
     },
   },
 });
