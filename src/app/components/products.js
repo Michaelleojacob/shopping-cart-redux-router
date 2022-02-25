@@ -10,9 +10,9 @@ const EachProduct = (obj) => {
   const handleSubmit = (e, item) => {
     e.preventDefault();
     const getInputValue = e.target.querySelector('.product-quantity').value;
-    const quantity = parseInt(getInputValue, 10);
+    const amount = parseInt(getInputValue, 10);
     const newItem = { ...item };
-    newItem.amount = isNaN(quantity) ? 1 : quantity;
+    newItem.quantity = isNaN(amount) ? 1 : amount;
     dispatch(addToCart(newItem));
   };
 
