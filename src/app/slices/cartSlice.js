@@ -20,6 +20,15 @@ const cartSlice = createSlice({
       doesItemExist ? updateItem() : newArr.push(item);
       state.cart = newArr;
     },
+    updateQuantity: (state, action) => {
+      const { id, newAmount } = action.payload;
+      const newArr = [...state.cart];
+      const index = newArr.indexOf(
+        newArr.find((cartItem) => cartItem.id === id),
+      );
+      newArr[index].quantity = newAmount;
+      state.cart = newArr;
+    },
     removeFromCart: (state, action) => {
       const newArr = [...state.cart];
       const id = action.payload;

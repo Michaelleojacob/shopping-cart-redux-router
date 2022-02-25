@@ -1,9 +1,53 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import cartSlice from '../slices/cartSlice';
+
+const UpdateQuantityOpen = (props) => {
+  const id = props.id;
+  const { updateQuantity, removeFromCart } = cartSlice.actions;
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const value = e.target.querySelector('.updateQuantity').value;
+    const newAmount = parseInt(value, 10);
+    if (isNaN(newAmount)) return;
+    if (newAmount === 0) return dispatch(removeFromCart(id));
+    dispatch(updateQuantity({ id, newAmount }));
+    e.target.querySelector('.updateQuantity').value = '';
+  };
+  return (
+    <div>
+      <div>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <label>
+            enter new amount:
+            <div>
+              <input className="updateQuantity" type="number"></input>
+              <button>save</button>
+            </div>
+          </label>
+        </form>
+        <button onClick={props.changeDisplay}>close</button>
+      </div>
+    </div>
+  );
+};
+
+const UpdateQuantiyClosed = (props) => {
+  return (
+    <div>
+      <div>
+        <button onClick={props.changeDisplay}>change quantity</button>
+      </div>
+    </div>
+  );
+};
 
 const EachCartItem = (obj) => {
   const { cartItem } = obj;
   const { removeFromCart } = cartSlice.actions;
+  const [displayUpdateQuantity, setDisplayUpdateQuantity] = useState(false);
+  const changeDisplay = () => setDisplayUpdateQuantity(!displayUpdateQuantity);
   const dispatch = useDispatch();
   const total = parseInt(cartItem.price, 10) * parseInt(cartItem.quantity);
   const handleDelete = (identifier) => {
@@ -11,34 +55,27 @@ const EachCartItem = (obj) => {
   };
   return (
     <div>
-      <div>{cartItem.name}</div>
-      <div>{cartItem.quantity}</div>
       <img
         className="cart-image"
         src={process.env.PUBLIC_URL + '/assets/images/' + cartItem.image}
         alt={cartItem.name}
       ></img>
+      <div>{cartItem.name}</div>
+      <div>quantity: {cartItem.quantity}</div>
       <div>each: ${cartItem.price.toLocaleString()}</div>
       <div>total: ${total.toLocaleString()}</div>
-      <button onClick={() => handleDelete(cartItem.id)}>delete</button>
+      <div>
+        {displayUpdateQuantity ? (
+          <UpdateQuantityOpen changeDisplay={changeDisplay} id={cartItem.id} />
+        ) : (
+          <UpdateQuantiyClosed changeDisplay={changeDisplay} />
+        )}
+      </div>
+      <div>
+        <button onClick={() => handleDelete(cartItem.id)}>delete</button>
+      </div>
     </div>
   );
 };
 
 export default EachCartItem;
-
-// return (
-//   <div className="product-item">
-//     <div className="product-name">{product.name}</div>
-//     <div>{product.price}</div>
-//     <img
-//       className="product-image"
-//       src={process.env.PUBLIC_URL + '/assets/images/' + product.image}
-//       alt={product.name}
-//     ></img>
-//     <form className="product-form" onSubmit={handleSubmit}>
-//       <input type="number" className="product-quantity"></input>
-//       <button onClick={() => handleClick(product)}>add to cart</button>
-//     </form>
-//   </div>
-// );
