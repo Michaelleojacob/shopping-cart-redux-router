@@ -45,7 +45,8 @@ const UpdateQuantiyClosed = (props) => {
 
 const EachCartItem = (obj) => {
   const { cartItem } = obj;
-  const { removeFromCart } = cartSlice.actions;
+  const { removeFromCart, quantityPlusOne, quantityMinusOne } =
+    cartSlice.actions;
   const [displayUpdateQuantity, setDisplayUpdateQuantity] = useState(false);
   const changeDisplay = () => setDisplayUpdateQuantity(!displayUpdateQuantity);
   const dispatch = useDispatch();
@@ -61,7 +62,18 @@ const EachCartItem = (obj) => {
         alt={cartItem.name}
       ></img>
       <div>{cartItem.name}</div>
-      <div>quantity: {cartItem.quantity}</div>
+      <div>
+        <div>
+          quantity:
+          <button onClick={() => dispatch(quantityMinusOne(cartItem.id))}>
+            -
+          </button>{' '}
+          {cartItem.quantity}
+          <button onClick={() => dispatch(quantityPlusOne(cartItem.id))}>
+            +
+          </button>
+        </div>
+      </div>
       <div>each: ${cartItem.price.toLocaleString()}</div>
       <div>total: ${total.toLocaleString()}</div>
       <div>

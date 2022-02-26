@@ -6,14 +6,14 @@ const Nav = () => {
   return (
     <div id="nav-container">
       <div id="nav-title">
-        <div>nav</div>
+        <div>fake-sticker-store</div>
       </div>
       <div id="nav-links">
         <div>
-          <Link to="/">home</Link>
+          <Link to="/app">home</Link>
         </div>
         <div>
-          <Link to="/products">products</Link>
+          <Link to="/">products</Link>
         </div>
         <div>
           <Link to="/cart">cart {cart.length}</Link>

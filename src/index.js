@@ -14,9 +14,9 @@ render(
     <Provider store={store}>
       <Nav />
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/app" element={<App />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Provider>
