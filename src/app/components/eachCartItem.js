@@ -14,6 +14,7 @@ const UpdateQuantityOpen = (props) => {
     if (newAmount === 0) return dispatch(removeFromCart(id));
     dispatch(updateQuantity({ id, newAmount }));
     e.target.querySelector('.updateQuantity').value = '';
+    props.changeDisplay();
   };
   return (
     <div>
