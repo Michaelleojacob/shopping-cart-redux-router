@@ -1,25 +1,50 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Nav = () => {
   const cart = useSelector((state) => state.cartStore.cart);
   return (
     <div id="nav-container">
-      <div id="nav-title">
-        <div>fake-sticker-store</div>
-      </div>
       <div id="nav-links">
         <div>
-          <Link to="/app">home</Link>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? 'active-link' : 'inactive-link'
+            }
+            to="/app"
+          >
+            home
+          </NavLink>
         </div>
         <div>
-          <Link to="/">products</Link>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? 'active-link' : 'inactive-link'
+            }
+            to="/"
+          >
+            products
+          </NavLink>
         </div>
         <div>
-          <Link to="/cart">cart {cart.length}</Link>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? 'active-link' : 'inactive-link'
+            }
+            to="/cart"
+          >
+            cart {cart.length}
+          </NavLink>
         </div>
         <div>
-          <Link to="/contact">contact</Link>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? 'active-link' : 'inactive-link'
+            }
+            to="/contact"
+          >
+            contact
+          </NavLink>
         </div>
       </div>
     </div>

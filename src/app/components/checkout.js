@@ -15,6 +15,7 @@ const Checkout = () => {
     <div>
       <div>checkout</div>
       <div>{sum}</div>
+      <div>unique items: {cart.length}</div>
     </div>
   );
 };

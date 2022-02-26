@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './index.css';
 import store from './app/store/store';
+import Header from './app/components/header';
 import Nav from './app/components/nav';
 import App from './app/app';
 import Products from './app/components/products';
@@ -12,6 +13,7 @@ import Contact from './app/components/contact';
 render(
   <BrowserRouter>
     <Provider store={store}>
+      <Header />
       <Nav />
       <Routes>
         <Route path="/app" element={<App />} />
