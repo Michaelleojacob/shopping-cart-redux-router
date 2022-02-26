@@ -10,6 +10,7 @@ const cartSlice = createSlice({
       const newArr = [...state.cart];
       const item = action.payload;
       const { id, quantity } = item;
+      if (quantity <= 0) return;
       const doesItemExist = newArr.some((cartItem) => cartItem.id === id);
       const updateItem = () => {
         const getItem = newArr.indexOf(
@@ -27,7 +28,9 @@ const cartSlice = createSlice({
         newArr.find((cartItem) => cartItem.id === id),
       );
       newArr[index].quantity = newAmount;
-      state.cart = newArr;
+      newArr[index].quantity >= 1
+        ? (state.cart = newArr)
+        : (state.cart = newArr.filter((item) => item.id !== id));
     },
     removeFromCart: (state, action) => {
       const newArr = [...state.cart];
@@ -50,8 +53,12 @@ const cartSlice = createSlice({
       const index = newArr.indexOf(
         newArr.find((cartItem) => cartItem.id === id),
       );
+      if (newArr[index].quantity === 1) return;
       newArr[index].quantity -= 1;
-      state.cart = newArr;
+
+      newArr[index].quantity >= 1
+        ? (state.cart = newArr)
+        : (state.cart = newArr.filter((item) => item.id !== id));
     },
   },
 });

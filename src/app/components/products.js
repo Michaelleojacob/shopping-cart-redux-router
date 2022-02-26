@@ -26,7 +26,7 @@ const EachProduct = (obj) => {
         alt={product.name}
       ></img>
       <form className="product-form" onSubmit={(e) => handleSubmit(e, product)}>
-        <input type="number" className="product-quantity"></input>
+        <input type="number" className="product-quantity" min="0"></input>
         <button>add to cart</button>
       </form>
     </div>

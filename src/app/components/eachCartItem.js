@@ -22,7 +22,7 @@ const UpdateQuantityOpen = (props) => {
           <label>
             enter new amount:
             <div>
-              <input className="updateQuantity" type="number"></input>
+              <input className="updateQuantity" type="number" min="1"></input>
               <button>save</button>
             </div>
           </label>
