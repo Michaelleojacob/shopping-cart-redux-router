@@ -1,5 +1,9 @@
 #product-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+  overflow-y: scroll;
 }
 
 #product-container-child {

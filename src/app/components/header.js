@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <div>
-      <div>fake sticker store</div>
+    <div id="header-container">
+      <div id="header-title">fake sticker store</div>
     </div>
   );
 };

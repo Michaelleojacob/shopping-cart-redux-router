@@ -1,11 +1,21 @@
 #nav-container {
   display: flex;
   font-size: 2rem;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: #e9ecef;
+  padding: var(--padding);
 }
 
 #nav-links {
   display: flex;
-  gap: 0.5rem;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.active-link {
+  color: red;
+}
+
+.inactive-link {
+  all: unset;
+  cursor: pointer;
 }
