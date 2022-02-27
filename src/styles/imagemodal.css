@@ -41,8 +41,8 @@
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
   font-size: 2rem;
+  max-height: fit-content;
 }
 
 /* Add Animation */
@@ -77,7 +77,6 @@
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #f1f1f1;
   font-size: 5rem;
   font-weight: bold;
   transition: 0.3s;

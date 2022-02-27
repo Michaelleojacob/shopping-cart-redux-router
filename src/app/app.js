@@ -1,10 +1,19 @@
+import { useNavigate } from 'react-router-dom';
+
 const App = () => {
+  const navigate = useNavigate();
+  const handleProducts = () => navigate('/products');
+  const handleContact = () => navigate('/contact');
   return (
     <div>
       <div>Weclome to my store!</div>
       <div>Many wonderful cat and dog stickers for sale</div>
+      <div>currently all stickers come in one size: fake.</div>
       <div>
-        Browse the store: <button>products</button>
+        Browse the store: <button onClick={handleProducts}>products</button>
+      </div>
+      <div>
+        get in touch: <button onClick={handleContact}>contact</button>
       </div>
     </div>
   );

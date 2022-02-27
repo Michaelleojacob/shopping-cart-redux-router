@@ -72,17 +72,8 @@ const EachProduct = (obj) => {
   };
 
   const closeModal = (e) => {
-    switch (true) {
-      case e.target.classList.contains('product-modal-close'):
-        e.target.parentElement.style.display = 'none';
-        break;
-      case e.target.classList.contains('product-modal'):
-        e.target.style.display = 'none';
-        break;
-      default:
-        document.querySelector('.product.modal').style.display = 'none';
-        break;
-    }
+    const arr = Array.from(document.querySelectorAll('.product-modal'));
+    arr.map((item) => (item.style.display = 'none'));
   };
 
   return (
@@ -98,6 +89,8 @@ const EachProduct = (obj) => {
       {/* modal */}
       <div onClick={closeModal} className="product-modal">
         <span className="product-modal-close">&times;</span>
+
+        <div className="product-modal-close"></div>
         <img
           className="product-modal-content"
           src={process.env.PUBLIC_URL + '/assets/images/' + product.image}
