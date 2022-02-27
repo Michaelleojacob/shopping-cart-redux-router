@@ -11,7 +11,7 @@ const Nav = () => {
             className={({ isActive }) =>
               isActive ? 'active-link' : 'inactive-link'
             }
-            to="/app"
+            to="/"
           >
             home
           </NavLink>
@@ -21,7 +21,7 @@ const Nav = () => {
             className={({ isActive }) =>
               isActive ? 'active-link' : 'inactive-link'
             }
-            to="/"
+            to="/products"
           >
             products
           </NavLink>

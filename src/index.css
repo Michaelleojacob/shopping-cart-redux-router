@@ -1,3 +1,9 @@
 @import url('./styles/nav.css');
 @import url('./styles/products.css');
 @import url('./styles/cart.css');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
