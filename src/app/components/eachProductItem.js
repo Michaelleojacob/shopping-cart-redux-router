@@ -66,15 +66,46 @@ const EachProduct = (obj) => {
     return dispatch(addToCart(itemToAddToCart));
   };
 
+  const handleModal = (e) => {
+    const element = e.target.parentElement.querySelector('.product-modal');
+    element.style.display = 'block';
+  };
+
+  const closeModal = (e) => {
+    switch (true) {
+      case e.target.classList.contains('product-modal-close'):
+        e.target.parentElement.style.display = 'none';
+        break;
+      case e.target.classList.contains('product-modal'):
+        e.target.style.display = 'none';
+        break;
+      default:
+        document.querySelector('.product.modal').style.display = 'none';
+        break;
+    }
+  };
+
   return (
     <div className="product-item">
       <div className="product-name">{product.name}</div>
       <div>${product.price.toLocaleString()}</div>
       <img
+        onClick={handleModal}
         className="product-image"
         src={process.env.PUBLIC_URL + '/assets/images/' + product.image}
         alt={product.name}
       ></img>
+      {/* modal */}
+      <div onClick={closeModal} className="product-modal">
+        <span className="product-modal-close">&times;</span>
+        <img
+          className="product-modal-content"
+          src={process.env.PUBLIC_URL + '/assets/images/' + product.image}
+          alt={product.name}
+        ></img>
+        <div className="product-modal-caption">{product.name}</div>
+      </div>
+      {/* modal */}
       <button onClick={() => addOneToCart(product)}>add to cart</button>
       {isOpen ? (
         <Open changeIsOpen={changeIsOpen} product={product} />
@@ -86,38 +117,3 @@ const EachProduct = (obj) => {
 };
 
 export default EachProduct;
-
-// import getProductList from '../data/productList';
-// import cartSlice from '../slices/cartSlice';
-// import { useDispatch } from 'react-redux';
-
-// const EachProduct = (obj) => {
-//   const { product } = obj;
-//   const { addToCart } = cartSlice.actions;
-//   const dispatch = useDispatch();
-
-//   const handleSubmit = (e, item) => {
-//     e.preventDefault();
-//     const getInputValue = e.target.querySelector('.product-quantity').value;
-//     const amount = parseInt(getInputValue, 10);
-//     const newItem = { ...item };
-//     newItem.quantity = isNaN(amount) ? 1 : amount;
-//     dispatch(addToCart(newItem));
-//   };
-
-//   return (
-//     <div className="product-item">
-//       <div className="product-name">{product.name}</div>
-//       <div>${product.price.toLocaleString()}</div>
-//       <img
-//         className="product-image"
-//         src={process.env.PUBLIC_URL + '/assets/images/' + product.image}
-//         alt={product.name}
-//       ></img>
-//       <form className="product-form" onSubmit={(e) => handleSubmit(e, product)}>
-//         <input type="number" className="product-quantity" min="0"></input>
-//         <button>add to cart</button>
-//       </form>
-//     </div>
-//   );
-// };

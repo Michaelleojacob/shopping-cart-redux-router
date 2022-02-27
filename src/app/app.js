@@ -1,7 +1,11 @@
 const App = () => {
   return (
     <div>
-      <div>Weclome to my store</div>
+      <div>Weclome to my store!</div>
+      <div>Many wonderful cat and dog stickers for sale</div>
+      <div>
+        Browse the store: <button>products</button>
+      </div>
     </div>
   );
 };

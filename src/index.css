@@ -1,6 +1,7 @@
 @import url('./styles/nav.css');
 @import url('./styles/products.css');
 @import url('./styles/cart.css');
+@import url('./styles/imagemodal.css');
 
 html,
 body {
