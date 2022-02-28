@@ -27,5 +27,6 @@
   border-radius: 4px;
 }
 
-/* .inactive-link {
-} */
+.inactive-link:hover {
+  opacity: 70%;
+}
