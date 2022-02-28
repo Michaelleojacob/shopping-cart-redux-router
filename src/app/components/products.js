@@ -5,8 +5,10 @@ const Products = () => {
   const productList = getProductList();
   return (
     <div id="product-container">
-      <div>click or tap any image to enlarge the image</div>
-      <div id="product-container-child">
+      <div id="product-instructions">
+        click or tap any image to enlarge the image
+      </div>
+      <div id="product-list">
         {productList.map((product) => {
           return <EachProduct product={product} key={product.id} />;
         })}

@@ -18,6 +18,7 @@ body {
   --outside-padding: 1rem;
   --link-component-color: #dee2e6;
   --big-gap: 1rem;
+  --font-size: 1.5rem;
 }
 
 #root {

@@ -22,33 +22,56 @@ const Open = (props) => {
     setValue(value - 1);
   };
   return (
-    <div>
-      <form onSubmit={(e) => handleSubmit(e, props.product)}>
-        <button type="button" onClick={decrementValue}>
-          -
-        </button>
-        <input
-          className="product-quantity"
-          type={'number'}
-          min={'0'}
-          value={value}
-          onChange={handleChange}
-        ></input>
-        <button type="button" onClick={incrementValue}>
-          +
-        </button>
-        <div>
-          <button type="submit">save</button>
+    <div className="product-form-container">
+      <form
+        className="product-buy-many-form"
+        onSubmit={(e) => handleSubmit(e, props.product)}
+      >
+        <div className="product-form-input">
+          <button
+            className="product-btn"
+            type="button"
+            onClick={decrementValue}
+          >
+            -
+          </button>
+          <input
+            className="product-quantity"
+            type={'number'}
+            min={'0'}
+            value={value}
+            onChange={handleChange}
+          ></input>
+          <button
+            className="product-btn"
+            type="button"
+            onClick={incrementValue}
+          >
+            +
+          </button>
+        </div>
+        <div className="product-form-buttons">
+          <button className="product-btn" type="submit">
+            order
+          </button>
+          <button
+            className="product-btn"
+            type="button"
+            onClick={props.changeIsOpen}
+          >
+            cancel
+          </button>
         </div>
       </form>
-      <button onClick={props.changeIsOpen}>close</button>
     </div>
   );
 };
 const Closed = (props) => {
   return (
     <div>
-      <button onClick={props.changeIsOpen}>buy many</button>
+      <button className="product-btn" onClick={props.changeIsOpen}>
+        buy many
+      </button>
     </div>
   );
 };
@@ -78,8 +101,6 @@ const EachProduct = (obj) => {
 
   return (
     <div className="product-item">
-      <div className="product-name">{product.name}</div>
-      <div>${product.price.toLocaleString()}</div>
       <img
         onClick={handleModal}
         className="product-image"
@@ -99,7 +120,11 @@ const EachProduct = (obj) => {
         <div className="product-modal-caption">{product.name}</div>
       </div>
       {/* modal */}
-      <button onClick={() => addOneToCart(product)}>add to cart</button>
+      <div className="product-name">{product.name}</div>
+      <div>${product.price.toLocaleString()}</div>
+      <button className="product-btn" onClick={() => addOneToCart(product)}>
+        add to cart
+      </button>
       {isOpen ? (
         <Open changeIsOpen={changeIsOpen} product={product} />
       ) : (
