@@ -56,7 +56,7 @@ const EachCartItem = (obj) => {
     dispatch(removeFromCart(identifier));
   };
   return (
-    <div>
+    <div className="cart-item">
       <img
         className="cart-image"
         src={process.env.PUBLIC_URL + '/assets/images/' + cartItem.image}

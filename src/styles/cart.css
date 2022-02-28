@@ -1,3 +1,31 @@
-#cart-container {
+#cart-checkout-container {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#cart-container {
+  background-color: var(--light-component);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 60%;
+  padding: 1rem;
+  font-size: 1.25rem;
+  justify-content: center;
+}
+
+#checkout-container {
+  background-color: var(--dark-component);
+  height: 100vh;
+  padding: 1rem;
+  font-size: 1.5rem;
+  min-width: 40%;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }

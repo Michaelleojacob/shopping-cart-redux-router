@@ -3,6 +3,7 @@
 @import url('./styles/app-main.css');
 @import url('./styles/products.css');
 @import url('./styles/cart.css');
+@import url('./styles/checkout.css');
 @import url('./styles/imagemodal.css');
 
 html,
@@ -17,6 +18,10 @@ body {
   --gap: 0.5rem;
   --outside-padding: 1rem;
   --link-component-color: #dee2e6;
+  --header-color: #495057;
+  --nav-color: #adb5bd;
+  --dark-component: #dee2e6;
+  --light-component: #f8f9fa;
   --big-gap: 1rem;
   --font-size: 1.5rem;
 }

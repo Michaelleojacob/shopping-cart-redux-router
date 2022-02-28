@@ -6,6 +6,7 @@
   overflow-y: scroll;
   padding: var(--outside-padding);
   gap: var(--big-gap);
+  background-color: var(--light-component);
 }
 
 #product-list {
@@ -24,8 +25,8 @@
   font-size: 1.25rem;
   padding: var(--padding);
   gap: 0.25rem;
-  min-height: 290px;
-  min-width: 150px;
+  min-height: 310px;
+  min-width: 175px;
   max-width: 155px;
   max-height: 300px;
 }

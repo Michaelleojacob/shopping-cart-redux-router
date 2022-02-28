@@ -5,24 +5,26 @@
   padding: var(--outside-padding);
   font-size: 1.5rem;
   gap: 3.5rem;
+  background-color: var(--light-component);
 }
 
 #home-navigate-btns {
   display: flex;
   gap: 1rem;
   width: 100%;
-  /* background-color: #dee2e6; */
+  justify-content: center;
 }
 
 #home-browse-btn-div,
 #home-get-in-touch {
   display: flex;
   flex-direction: column;
-  background-color: #dee2e6;
+  background-color: var(--dark-component);
   border: 1px solid transparent;
-  width: 100%;
   align-items: center;
   padding: var(--padding);
+  min-width: 200px;
+  min-height: 75px;
 }
 
 /* #home-browse-btn-div {
