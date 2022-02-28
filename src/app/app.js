@@ -11,41 +11,53 @@ const App = () => {
       <div id="home-for-sale-span">
         <span>Many fake and wonderful stickers for sale.</span>
         <div id="home-size-span">
-          <span>currently all stickers come in one size - nonexistent.</span>
+          <span>Currently all stickers come in one size - nonexistent.</span>
         </div>
       </div>
 
       <div id="home-browsing-span">
         <span>
           While browsing the products, click any of the images to enlarge the
-          image
+          image.
         </span>
       </div>
 
       <div id="home-cart-instructions">
-        <span>
-          The cart on the nav bar will keep track of unique items in the cart.
-        </span>
         <div>
-          <span id="">
-            If you would like to see a more detailed invoice of the items
-            <button>click here to see detailed order information</button>
-          </span>
+          The cart on the nav bar will keep track of unique items in the cart.
         </div>
+      </div>
+
+      <div>
+        <span id="">
+          If you would like to see more details about the order then click the
+          order info button below or the cart button on the nav.
+          <div>
+            <button className="home-btn">order info</button>
+          </div>
+        </span>
       </div>
 
       <div id="home-navigate-btns">
         <div id="home-browse-btn-div">
-          Check out our stickers!
+          Browse stickers!
           <div>
-            <button onClick={handleProducts}>browse products</button>
+            <button
+              className="home-btn"
+              id="browse-btn"
+              onClick={handleProducts}
+            >
+              browse products
+            </button>
           </div>
         </div>
 
         <div id="home-get-in-touch">
-          if you have any questions,
+          Questions?
           <div>
-            <button onClick={handleContact}>get in touch</button>
+            <button className="home-btn" onClick={handleContact}>
+              get in touch
+            </button>
           </div>
         </div>
       </div>
