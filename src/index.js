@@ -13,10 +13,8 @@ import Contact from './app/components/contact';
 render(
   <BrowserRouter>
     <Provider store={store}>
-      <div id="content-outter">
-        <Header />
-        <Nav />
-      </div>
+      <Header />
+      <Nav />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/cart" element={<Cart />} />
