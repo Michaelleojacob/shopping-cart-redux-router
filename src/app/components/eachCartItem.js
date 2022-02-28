@@ -17,19 +17,25 @@ const UpdateQuantityOpen = (props) => {
     props.changeDisplay();
   };
   return (
-    <div>
-      <div>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <label>
-            enter new amount:
-            <div>
-              <input className="updateQuantity" type="number" min="1"></input>
-              <button>save</button>
-            </div>
-          </label>
-        </form>
-        <button onClick={props.changeDisplay}>close</button>
-      </div>
+    <div className="cart-item-form-container">
+      <form className="cart-item-form" onSubmit={(e) => handleSubmit(e)}>
+        <label>
+          enter new amount:
+          <div>
+            <input className="updateQuantity" type="number" min="1"></input>
+          </div>
+        </label>
+        <div className="cart-btn-container">
+          <button className="cart-btn">save</button>
+          <button
+            className="cart-btn"
+            type="button"
+            onClick={props.changeDisplay}
+          >
+            cancel
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
@@ -38,7 +44,9 @@ const UpdateQuantiyClosed = (props) => {
   return (
     <div>
       <div>
-        <button onClick={props.changeDisplay}>change quantity</button>
+        <button className="cart-btn" onClick={props.changeDisplay}>
+          change quantity
+        </button>
       </div>
     </div>
   );
@@ -63,17 +71,20 @@ const EachCartItem = (obj) => {
         alt={cartItem.name}
       ></img>
       <div>{cartItem.name}</div>
-      <div>
-        <div>
-          quantity:
-          <button onClick={() => dispatch(quantityMinusOne(cartItem.id))}>
-            -
-          </button>{' '}
-          {cartItem.quantity}
-          <button onClick={() => dispatch(quantityPlusOne(cartItem.id))}>
-            +
-          </button>
-        </div>
+      <div className="cart-quantity-container">
+        <button
+          className="cart-btn"
+          onClick={() => dispatch(quantityMinusOne(cartItem.id))}
+        >
+          -
+        </button>{' '}
+        {cartItem.quantity}
+        <button
+          className="cart-btn"
+          onClick={() => dispatch(quantityPlusOne(cartItem.id))}
+        >
+          +
+        </button>
       </div>
       <div>each: ${cartItem.price.toLocaleString()}</div>
       <div>total: ${total.toLocaleString()}</div>
@@ -85,7 +96,9 @@ const EachCartItem = (obj) => {
         )}
       </div>
       <div>
-        <button onClick={() => handleDelete(cartItem.id)}>delete</button>
+        <button className="cart-btn" onClick={() => handleDelete(cartItem.id)}>
+          delete
+        </button>
       </div>
     </div>
   );
