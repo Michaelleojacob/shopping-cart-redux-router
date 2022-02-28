@@ -30,3 +30,7 @@
 .inactive-link:hover {
   opacity: 70%;
 }
+
+#nav-cart-items {
+  color: #e5383b;
+}

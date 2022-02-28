@@ -5,48 +5,52 @@ const App = () => {
   const handleProducts = () => navigate('/products');
   const handleContact = () => navigate('/contact');
   return (
-    <div>
-      <div>Weclome to my store!</div>
-      <div>Many wonderful cat and dog stickers for sale</div>
-      <div>currently all stickers come in one size: fake.</div>
-      <div>
-        Browse the store: <button onClick={handleProducts}>products</button>
+    <div id="home-container">
+      <div id="home-title">Weclome to my store!</div>
+
+      <div id="home-for-sale-span">
+        <span>Many fake and wonderful stickers for sale.</span>
+        <div id="home-size-span">
+          <span>currently all stickers come in one size - nonexistent.</span>
+        </div>
       </div>
-      <div>
-        get in touch: <button onClick={handleContact}>contact</button>
+
+      <div id="home-browsing-span">
+        <span>
+          While browsing the products, click any of the images to enlarge the
+          image
+        </span>
+      </div>
+
+      <div id="home-cart-instructions">
+        <span>
+          The cart on the nav bar will keep track of unique items in the cart.
+        </span>
+        <div>
+          <span id="">
+            If you would like to see a more detailed invoice of the items
+            <button>click here to see detailed order information</button>
+          </span>
+        </div>
+      </div>
+
+      <div id="home-navigate-btns">
+        <div id="home-browse-btn-div">
+          Check out our stickers!
+          <div>
+            <button onClick={handleProducts}>browse products</button>
+          </div>
+        </div>
+
+        <div id="home-get-in-touch">
+          if you have any questions,
+          <div>
+            <button onClick={handleContact}>get in touch</button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default App;
-
-// const App = () => {
-//   const { addToCart } = cartSlice.actions;
-//   const dispatch = useDispatch();
-
-//   // const cart = useSelector((state) => state.cartStore.cart);
-
-//   const handleClick = () => {
-//     dispatch(
-//       addToCart({ name: 'thing1', num: Math.floor(Math.random() * 100000) }),
-//     );
-//   };
-
-//   return (
-//     <div>
-//       <div>hi</div>
-//       <button onClick={handleClick}>add something to cart</button>
-//     </div>
-//   );
-// };
-
-// export default App;
-
-// sample image
-
-/* <img
-  src={process.env.PUBLIC_URL + '/assets/images/wonderdoge.png'}
-  src={process.env.PUBLIC_URL + '/assets/images/' + 'wonderdoge.png'}
-  alt="test"
-></img> */

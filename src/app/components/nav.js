@@ -33,7 +33,7 @@ const Nav = () => {
             }
             to="/cart"
           >
-            cart {cart.length}
+            cart <span id="nav-cart-items">{cart.length}</span>
           </NavLink>
         </div>
         <div>
