@@ -13,6 +13,7 @@ import Contact from './app/components/contact';
 render(
   // <BrowserRouter basename="/shopping-cart-redux-router">
   // <BrowserRouter>
+  // <HashRouter basename="/shopping-cart-redux-router">
   <HashRouter>
     <Provider store={store}>
       <Header />
