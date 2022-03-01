@@ -2,8 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 const App = () => {
   const navigate = useNavigate();
-  const handleProducts = () => navigate('/products');
-  const handleContact = () => navigate('/contact');
+  const handleLink = (link) => navigate(link);
   return (
     <div id="home-container">
       <div id="home-title">Weclome to my store!</div>
@@ -33,7 +32,9 @@ const App = () => {
           If you would like to see more details about the order then click the
           order info button below or the cart button on the nav.
           <div>
-            <button className="home-btn">order info</button>
+            <button className="home-btn" onClick={() => handleLink('/cart')}>
+              order info
+            </button>
           </div>
         </span>
       </div>
@@ -45,7 +46,7 @@ const App = () => {
             <button
               className="home-btn"
               id="browse-btn"
-              onClick={handleProducts}
+              onClick={() => handleLink('/products')}
             >
               browse products
             </button>
@@ -55,7 +56,7 @@ const App = () => {
         <div id="home-get-in-touch">
           Questions?
           <div>
-            <button className="home-btn" onClick={handleContact}>
+            <button className="home-btn" onClick={() => handleLink('/contact')}>
               get in touch
             </button>
           </div>
