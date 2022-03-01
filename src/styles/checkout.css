@@ -2,6 +2,7 @@
   display: flex;
   font-size: 1.5rem;
   gap: 1rem;
+  justify-content: center;
 }
 
 #checkout-content {

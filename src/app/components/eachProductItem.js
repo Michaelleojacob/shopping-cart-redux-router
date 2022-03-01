@@ -9,7 +9,7 @@ const Open = (props) => {
 
   const handleSubmit = (e, item) => {
     e.preventDefault();
-    if (isNaN(value) || value <= 1) return;
+    if (isNaN(value) || value < 1) return;
     const obj = { ...item };
     obj.quantity = parseInt(value, 10);
     dispatch(addToCart(obj));

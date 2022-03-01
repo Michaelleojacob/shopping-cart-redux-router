@@ -12,6 +12,7 @@ import Contact from './app/components/contact';
 
 render(
   <BrowserRouter basename="/shopping-cart-redux-router">
+    {/* <BrowserRouter> */}
     <Provider store={store}>
       <Header />
       <Nav />
