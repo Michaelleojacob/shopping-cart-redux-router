@@ -3,7 +3,7 @@
     "homepage1": "homepage: '/'",
     "homepage2": "homepage: 'https://michaelleojacob.github.io/shopping-cart-redux-router/'"
   },
-  "homepage": "/",
+  "homepage": "https://michaelleojacob.github.io/shopping-cart-redux-router/",
   "name": "shopping-cart",
   "version": "0.1.0",
   "private": true,
@@ -49,7 +49,7 @@
       "last 1 safari version"
     ]
   },
-  "output": {
-    "publicPath": "/"
+  "_comment-output": {
+    "_comment-publicPath": "/"
   }
 }
