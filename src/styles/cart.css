@@ -14,9 +14,11 @@
   padding: 1rem;
   font-size: 1.25rem;
   justify-content: center;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 100%;
   gap: 3rem;
+  flex-basis: 70%;
+  border: 1px solid transparent;
 }
 
 #checkout-container {
@@ -25,8 +27,9 @@
   padding: 1rem;
   font-size: 1.5rem;
   overflow: hidden;
-  min-width: 25%;
-  max-width: 25%;
+  flex-basis: 30%;
+  border: 1px solid var(--dark-component);
+  display: flex;
 }
 
 .cart-item {

@@ -6,7 +6,6 @@ const Cart = () => {
   const cart = useSelector((state) => state.cartStore.cart);
   return (
     <div id="cart-checkout-container">
-      <div>{cart.length === 0 ? <div>empty</div> : null}</div>
       <div id="cart-container">
         {cart.map((cartItem) => {
           return <EachCartItem cartItem={cartItem} key={cartItem.id} />;

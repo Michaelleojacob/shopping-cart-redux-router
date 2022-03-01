@@ -3,6 +3,7 @@
   font-size: 2rem;
   background-color: var(--nav-color);
   padding: var(--padding);
+  border: 1px solid transparent;
 }
 
 #nav-links {

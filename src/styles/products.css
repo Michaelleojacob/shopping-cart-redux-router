@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   max-height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: var(--outside-padding);
   gap: var(--big-gap);
   background-color: var(--light-component);
