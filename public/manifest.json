@@ -1,6 +1,6 @@
 {
-  "short_name": "fake-sticker-store",
-  "name": "fake-sticker-store",
+  "short_name": "fakestore",
+  "name": "fakestore",
   "icons": [
     {
       "src": "frenchderp.ico",
