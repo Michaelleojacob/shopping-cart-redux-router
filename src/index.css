@@ -23,6 +23,8 @@ body {
   --nav-color: #adb5bd;
   --dark-component: #dee2e6;
   --light-component: #f8f9fa;
+  --darkest-component: #212529;
+  --darker-component: #495057;
   --big-gap: 1rem;
   --font-size: 1.5rem;
 }
