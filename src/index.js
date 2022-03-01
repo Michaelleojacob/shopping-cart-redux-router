@@ -11,8 +11,8 @@ import Cart from './app/components/cart';
 import Contact from './app/components/contact';
 
 render(
-  <BrowserRouter basename="/shopping-cart-redux-router">
-    {/* <BrowserRouter> */}
+  // <BrowserRouter basename="/shopping-cart-redux-router">
+  <BrowserRouter>
     <Provider store={store}>
       <Header />
       <Nav />
@@ -21,6 +21,7 @@ render(
         <Route path="/cart" element={<Cart />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/*" element={<App />} />
       </Routes>
     </Provider>
   </BrowserRouter>,
