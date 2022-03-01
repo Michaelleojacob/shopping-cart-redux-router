@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.22061367.css",
-    "main.js": "/static/js/main.09f45260.js",
-    "index.html": "/index.html",
-    "main.22061367.css.map": "/static/css/main.22061367.css.map",
-    "main.09f45260.js.map": "/static/js/main.09f45260.js.map"
+    "main.css": "//michaelleojacob.github.io/shopping-cart-redux-router/static/css/main.22061367.css",
+    "main.js": "//michaelleojacob.github.io/shopping-cart-redux-router/static/js/main.f1694cad.js",
+    "index.html": "//michaelleojacob.github.io/shopping-cart-redux-router/index.html",
+    "main.22061367.css.map": "//michaelleojacob.github.io/shopping-cart-redux-router/static/css/main.22061367.css.map",
+    "main.f1694cad.js.map": "//michaelleojacob.github.io/shopping-cart-redux-router/static/js/main.f1694cad.js.map"
   },
   "entrypoints": [
     "static/css/main.22061367.css",
-    "static/js/main.09f45260.js"
+    "static/js/main.f1694cad.js"
   ]
 }

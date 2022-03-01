@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "fake-sticker-store",
+  "name": "fake-sticker-store",
   "icons": [
     {
       "src": "frenchderp.ico",
