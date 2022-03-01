@@ -1,0 +1,44 @@
+#contact-container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--outside-padding);
+  align-items: center;
+  gap: var(--big-gap);
+  font-size: 2rem;
+  background-color: var(--light-component);
+  height: 100vh;
+  overflow: auto;
+  gap: 3rem;
+}
+
+.contact-link-container,
+.contact-fake-link-container {
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+}
+.contact-link-container:hover,
+.contact-fake-link-container:hover {
+  opacity: 60%;
+}
+
+#contact-actual-flair,
+#contact-fake-flair {
+  display: flex;
+  gap: 3rem;
+}
+
+.contact-icon {
+  font-size: 3rem;
+  pointer-events: none;
+}
+
+#contact-email {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#contact-title {
+  border-bottom: 2px solid black;
+}
