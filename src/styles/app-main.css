@@ -4,7 +4,7 @@
   align-items: flex-start;
   padding: var(--outside-padding);
   font-size: 1.5rem;
-  gap: 3.5rem;
+  gap: 2.5rem;
   background-color: var(--light-component);
   height: 100vh;
 }
@@ -22,17 +22,12 @@
   flex-direction: column;
   background-color: var(--dark-component);
   border: 1px solid transparent;
+  border-radius: 4px;
   align-items: center;
   padding: var(--padding);
   min-width: 200px;
   min-height: 75px;
 }
-
-/* #home-browse-btn-div {
-}
-
-#home-get-in-touch {
-} */
 
 .home-btn {
   font-size: 1.05rem;
