@@ -1,5 +1,5 @@
 import { render } from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './index.css';
 import store from './app/store/store';
@@ -12,7 +12,8 @@ import Contact from './app/components/contact';
 
 render(
   // <BrowserRouter basename="/shopping-cart-redux-router">
-  <BrowserRouter>
+  // <BrowserRouter>
+  <HashRouter>
     <Provider store={store}>
       <Header />
       <Nav />
@@ -24,6 +25,7 @@ render(
         <Route path="/*" element={<App />} />
       </Routes>
     </Provider>
-  </BrowserRouter>,
+  </HashRouter>,
+  // </BrowserRouter>,
   document.getElementById('root'),
 );
